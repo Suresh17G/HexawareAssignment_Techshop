@@ -21,7 +21,7 @@ public class ProductDao implements ProductInterface {
 	public void insertProduct(Products product) throws Exception {
 		try {
 			connection = MyDBConnection.getMyDbConnection();
-			preparedStatement = connection.prepareStatement("insert into products values(?,?,?,?,?,?)");
+			preparedStatement = connection.prepareStatement("insert into products values(?,?,?,?,?)");
 			preparedStatement.setInt(1, product.getProductID());
 			preparedStatement.setString(2, product.getProductName());
 			preparedStatement.setString(3, product.getDescription());
@@ -56,7 +56,7 @@ public class ProductDao implements ProductInterface {
 				System.out.println("ProductID: " + resultSet.getInt(1));
 				System.out.println("ProductName: " + resultSet.getString(2));
 				System.out.println("Description: " + resultSet.getString(3));
-				System.out.println("Price: " + resultSet.getInt(4));
+				System.out.println("Price: " + resultSet.getDouble(4));
 				System.out.println("Category: " + resultSet.getString(5));
 				System.out.println("--------------");
 			}
@@ -71,13 +71,13 @@ public class ProductDao implements ProductInterface {
 		return ProductsList.getAllProducts();
 	}
 
-	public void updateProductInfo(int productId, int newPrice, String newDescription)
+	public void updateProductInfo(int productId, Double newPrice, String newDescription)
 			throws InvalidDataException, ClassNotFoundException {
 		try {
 			connection = MyDBConnection.getMyDbConnection();
 			preparedStatement = connection
 					.prepareStatement("update Products set Price=?,description= ? where ProductID=?");
-			preparedStatement.setInt(1, newPrice);
+			preparedStatement.setDouble(1, newPrice);
 			preparedStatement.setString(2, newDescription);
 			preparedStatement.setInt(3, productId);
 			int rowsUpdated = preparedStatement.executeUpdate();
@@ -130,7 +130,7 @@ public class ProductDao implements ProductInterface {
 				System.out.println("ProductID: " + resultSet.getInt(1));
 				System.out.println("ProductName: " + resultSet.getString(2));
 				System.out.println("Description: " + resultSet.getString(3));
-				System.out.println("Price: " + resultSet.getInt(4));
+				System.out.println("Price: " + resultSet.getDouble(4));
 				System.out.println("Category: " + resultSet.getString(5));
 				System.out.println("--------------");
 			}

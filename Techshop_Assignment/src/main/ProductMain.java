@@ -20,11 +20,10 @@ public class ProductMain{
         System.out.println("Enter Product Name:");
         String productName = sc.next();
         product.setProductName(productName);
-
         System.out.println("Enter Description:");
-        String description = sc.next();
+        sc.nextLine();
+        String description = sc.nextLine();
         product.setDescription(description);
-
         System.out.println("Enter Price:");
         int price = sc.nextInt();
         product.setPrice(price);
@@ -38,8 +37,6 @@ public class ProductMain{
         } catch (InvalidDataException e) {
             e.printStackTrace();
         }
-
-        System.out.println("Product added successfully !!!");
     }
 
     public void viewProduct() throws ClassNotFoundException {
@@ -53,7 +50,7 @@ public class ProductMain{
         int productId = sc.nextInt();
 
         System.out.println("Enter the new Price:");
-        int newPrice = sc.nextInt();
+        Double newPrice = sc.nextDouble();
         sc.nextLine();
         System.out.println("Enter new Description:");
         String newDescription= sc.nextLine();
