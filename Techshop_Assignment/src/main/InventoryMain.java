@@ -113,7 +113,7 @@ public class InventoryMain{
 	}
 	public void listOutofStockProducts() {
         try {
-			inventoryDao.listOutOfStockProducts();;
+			inventoryDao.listOutOfStockProducts();
 		} catch (ClassNotFoundException e) {
 			System.out.println(e.getMessage());
 		}
@@ -121,7 +121,7 @@ public class InventoryMain{
 	}
 	public void listAllProducts() {
         try {
-			inventoryDao.listAllProducts();;
+			inventoryDao.listAllProducts();
 		} catch (ClassNotFoundException e) {
 			System.out.println(e.getMessage());
 		}
