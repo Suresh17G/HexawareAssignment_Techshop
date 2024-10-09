@@ -34,7 +34,7 @@ public class OrderDetailsMain{
 
 	
 	public void addDiscount() throws ClassNotFoundException {
-		System.out.println("Enter OrderID: ");
+		System.out.println("Enter OrderDetailsID: ");
         int orderID = sc.nextInt();
 
         System.out.println("Enter Discount Percentage: ");

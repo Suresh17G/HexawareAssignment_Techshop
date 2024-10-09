@@ -89,7 +89,7 @@ public class OrderdetailsDao implements OrderDetailsInterface{
 			// Fetch order details including product price for the specified order ID
 			preparedStatement = connection.prepareStatement("SELECT orderdetails.Quantity, products.Price "
 					+ "FROM orderdetails " + "INNER JOIN products ON orderdetails.ProductID = products.ProductID "
-					+ "WHERE orderdetails.OrderID = ?");
+					+ "WHERE orderdetails.OrderDetailID = ?");
 			preparedStatement.setInt(1, orderID);
 			resultSet = preparedStatement.executeQuery();
 
@@ -100,7 +100,7 @@ public class OrderdetailsDao implements OrderDetailsInterface{
 				int quantity = resultSet.getInt("Quantity");
 				double price = resultSet.getDouble("Price");
 
-				totalCostBeforeDiscount += quantity * price;
+				totalCostBeforeDiscount += (quantity * price);
 			}
 
 			// Calculate discount and total cost after discount

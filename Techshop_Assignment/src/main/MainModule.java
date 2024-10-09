@@ -133,7 +133,7 @@ public class MainModule {
                             InventoryMain inventoryInterface = new InventoryMain();
                             boolean inventoryMenu = true;
                             while (inventoryMenu) {
-                                System.out.println("Enter your choice");
+                                System.out.println("\nEnter your choice");
                                 System.out.println("1. Get Quantity In Stock");
                                 System.out.println("2. Update Inventory");
                                 System.out.println("3. Is Product Available");

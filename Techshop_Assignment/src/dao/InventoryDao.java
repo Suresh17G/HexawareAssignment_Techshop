@@ -55,7 +55,7 @@ public class InventoryDao implements InventoryInterface {
             resultSet = preparedStatement.executeQuery();
 
             if (resultSet.next()) {
-                quantityInStock = resultSet.getInt("QuantityInStock");
+                quantityInStock = resultSet.getInt(1);
             }
         } catch (SQLException e) {
             e.printStackTrace();
